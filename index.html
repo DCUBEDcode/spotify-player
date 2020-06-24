@@ -17,13 +17,14 @@
       <div class="spotify__control">
         <i class="fas fa-step-backward"></i>
       </div>
-      <div class="spotify__control spotify__control--play">
-        <i class="fas fa-play"></i>
+      <div class="spotify__control spotify__control--bordered toggle" id="toggle">
+        <i class="fas fa-play toggle__icon toggle__icon--play"></i>
+        <i class="fas fa-pause toggle__icon toggle__icon--pause"></i>
       </div>
       <div class="spotify__control">
         <i class="fas fa-step-forward"></i>
       </div>
-      <div class="spotify__control">
+      <div class="spotify__control spotify__control--repeat spotify__control--repeat-track">
         <i class="fas fa-repeat"></i>
       </div>
     </div>
@@ -34,7 +35,17 @@
       </div>
       <span class="spotify__timer">4:20</span>
     </div>
+    <audio src="doom.mp3"></audio>
   </div>
+
+  <script>
+    const toggle = document.getElementById('toggle');
+
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggle.classList.toggle('toggle--paused');
+    })
+  </script>
 
 </body>
 </html>
